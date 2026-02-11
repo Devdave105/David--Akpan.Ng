@@ -497,26 +497,26 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = scrolled + '%';
 });
 
-// Prevent right-click on images (optional portfolio protection)
+
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         return false;
     });
     
-    // Prevent dragging
+
     img.addEventListener('dragstart', (e) => {
         e.preventDefault();
         return false;
     });
 });
 
-// Handle window resize
+
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        // Close mobile menu if window is resized to desktop size
+        
         if (window.innerWidth > 768 && navLinksContainer.classList.contains('active')) {
             menuToggle.classList.remove('active');
             navLinksContainer.classList.remove('active');
